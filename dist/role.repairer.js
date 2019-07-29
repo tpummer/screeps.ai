@@ -17,11 +17,12 @@ var roleRepairer = {
     }
 
     if(creep.memory.repairing) {
-      const targets = creep.room.find(FIND_STRUCTURES);
+      const targets = creep.room.find(FIND_STRUCTURES, {
+        filter: object => object.hits < object.hitsMax});
       targets.sort((a,b) => a.hits - b.hits);
       if(targets.length) {
-        if(creep.repair(targets[1]) == ERR_NOT_IN_RANGE) {
-          creep.moveTo(targets[1], {visualizePathStyle: {stroke: '#ffffff'}});
+        if(creep.repair(targets[0]) == ERR_NOT_IN_RANGE) {
+          creep.moveTo(targets[0], {visualizePathStyle: {stroke: '#ffffff'}});
           creep.say('repair');
         }
       }
