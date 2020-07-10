@@ -1,4 +1,4 @@
-import constants_name;
+var Spawn1 = 'Home';
 
 var roleHarvester = require('role.harvester');
 var roleUpgrader = require('role.upgrader');

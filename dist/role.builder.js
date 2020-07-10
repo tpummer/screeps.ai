@@ -1,5 +1,3 @@
-import constants_name;
-
 // role.builder
 
 var roleBuilder = {
