@@ -1,3 +1,5 @@
+import constants_name;
+
 // role.harvester
 
 var roleHarvester = {
@@ -23,7 +25,7 @@ var roleHarvester = {
                     creep.moveTo(targets[0], {visualizePathStyle: {stroke: '#ffffff'}});
                 }
             } else {
-                creep.moveTo(Game.spawns['Spawn1']);
+                creep.moveTo(Game.spawns[Spawn1]);
             }
         }
 	}
