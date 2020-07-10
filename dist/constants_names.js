@@ -1,1 +1,1 @@
-var Spawn1 = 'Home';
+export const SPAWN1 = 'Home';

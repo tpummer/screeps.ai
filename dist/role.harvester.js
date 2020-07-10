@@ -1,4 +1,4 @@
-var Spawn1 = 'Home';
+import {SPAWN1} from '../../constants';
 
 // role.harvester
 
@@ -26,7 +26,7 @@ var roleHarvester = {
                     creep.moveTo(targets[0], {visualizePathStyle: {stroke: '#ffffff'}});
                 }
             } else {
-                creep.moveTo(Game.spawns[Spawn1]);
+                creep.moveTo(Game.spawns[SPAWN1]);
             }
         }
 	}
