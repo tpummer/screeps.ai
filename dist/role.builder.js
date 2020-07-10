@@ -1,3 +1,5 @@
+var Spawn1 = 'Home';
+
 // role.builder
 
 var roleBuilder = {
