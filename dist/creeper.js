@@ -2,6 +2,7 @@ const roleHarvester = require('role.harvester');
 const roleUpgrader = require('role.upgrader');
 const roleBuilder = require('role.builder');
 const roleRepairer = require('role.repairer');
+const roleTestdummy = require('role.testdummy');
 
 module.exports = {
   move: function(){
@@ -18,6 +19,9 @@ module.exports = {
       }
       if (creep.memory.role == 'repairer') {
         roleRepairer.run(creep);
+      }
+      if (creep.memory.role == 'testdummy') {
+        roleTestdummy.run(creep);
       }
     }
   },

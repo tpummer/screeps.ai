@@ -1,4 +1,4 @@
-const constants = require('constants');
+const c = require('constants');
 
 // role.harvester
 
@@ -9,7 +9,7 @@ const roleHarvester = {
     if (creep.carry.energy < creep.carryCapacity) {
       const sources = creep.room.find(FIND_SOURCES);
       if (creep.harvest(sources[0]) == ERR_NOT_IN_RANGE) {
-        const resultOfMoving = creep.moveTo(sources[0], {visualizePathStyle: {stroke: '#ffaa00'}});
+        const resultOfMoving = creep.moveTo(sources[0], {visualizePathStyle: {stroke: c.COLOR_ORANGE}});
         console.log(creep.name + ' moves ' + resultOfMoving);
       }
     } else {
@@ -22,10 +22,10 @@ const roleHarvester = {
       });
       if (targets.length > 0) {
         if (creep.transfer(targets[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-          creep.moveTo(targets[0], {visualizePathStyle: {stroke: '#ffffff'}});
+          creep.moveTo(targets[0], {visualizePathStyle: {stroke: c.COLOR_WHITE}});
         }
       } else {
-        creep.moveTo(Game.spawns[constants.SPAWN1]);
+        creep.moveTo(Game.spawns[c.SPAWN1]);
       }
     }
   },
