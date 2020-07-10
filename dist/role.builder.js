@@ -1,4 +1,4 @@
-const name = require('constants_names');
+const constants = require('constants');
 
 // role.builder
 
@@ -27,7 +27,7 @@ const roleBuilder = {
       if (creep.harvest(sources[0]) == ERR_NOT_IN_RANGE) {
         creep.moveTo(sources[0], {visualizePathStyle: {stroke: '#ffaa00'}});
       } else {
-        creep.moveTo(name.SPAWN1);
+        creep.moveTo(constants.SPAWN1);
       }
 	    }
   },

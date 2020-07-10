@@ -1,4 +1,4 @@
-const name = require('constants_names');
+const constants = require('constants');
 
 // role.harvester
 
@@ -25,7 +25,7 @@ const roleHarvester = {
           creep.moveTo(targets[0], {visualizePathStyle: {stroke: '#ffffff'}});
         }
       } else {
-        creep.moveTo(Game.spawns[name.SPAWN1]);
+        creep.moveTo(Game.spawns[constants.SPAWN1]);
       }
     }
   },
