@@ -1,4 +1,4 @@
-import {SPAWN1} from '../../constants';
+var name = require('constants_names');
 
 var roleHarvester = require('role.harvester');
 var roleUpgrader = require('role.upgrader');
@@ -35,10 +35,10 @@ module.exports.loop = function () {
 	var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester');
     console.log('Harvesters: ' + harvesters.length);
 
-    if(harvesters.length < harvesterCount && Game.spawns[SPAWN1].energy >= 200) {
+    if(harvesters.length < harvesterCount && Game.spawns[name.SPAWN1].energy >= 200) {
         var newName = 'Harvester' + Game.time;
         console.log('Spawning new harvester: ' + newName);
-        Game.spawns[SPAWN1].spawnCreep([WORK,CARRY,MOVE], newName,
+        Game.spawns[name.SPAWN1].spawnCreep([WORK,CARRY,MOVE], newName,
             {memory: {role: 'harvester'}});
     }
 
@@ -50,7 +50,7 @@ module.exports.loop = function () {
 	    if(harvesters.length == harvesterCount && upgraders.length < upgraderCount) {
         var newName = 'Upgrader' + Game.time;
         console.log('Spawning new upgrader: ' + newName);
-        Game.spawns[SPAWN1].spawnCreep([WORK,CARRY,MOVE], newName,
+        Game.spawns[name.SPAWN1].spawnCreep([WORK,CARRY,MOVE], newName,
             {memory: {role: 'upgrader', upgrading: 'false'}});
     }
 
@@ -62,7 +62,7 @@ module.exports.loop = function () {
 	    if(harvesters.length == harvesterCount && builders.length < builderCount) {
         var newName = 'Builder' + Game.time;
         console.log('Spawning new builder: ' + newName);
-        Game.spawns[SPAWN1].spawnCreep([WORK,CARRY,MOVE], newName,
+        Game.spawns[name.SPAWN1].spawnCreep([WORK,CARRY,MOVE], newName,
             {memory: {role: 'builder'}});
     }
 
@@ -74,16 +74,16 @@ module.exports.loop = function () {
 				if(harvesters.length == harvesterCount && repairers.length < repairerCount) {
 					var newName = 'Repairer' + Game.time;
 					console.log('Spawning new repairer: ' + newName);
-					Game.spawns[SPAWN1].spawnCreep([WORK,CARRY,MOVE], newName,
+					Game.spawns[name.SPAWN1].spawnCreep([WORK,CARRY,MOVE], newName,
 							{memory: {role: 'repairer'}});
 			}
 
-	if(Game.spawns[SPAWN1].spawning) {
-        var spawningCreep = Game.creeps[Game.spawns[SPAWN1].spawning.name];
-        Game.spawns[SPAWN1].room.visual.text(
+	if(Game.spawns[name.SPAWN1].spawning) {
+        var spawningCreep = Game.creeps[Game.spawns[name.SPAWN1].spawning.name];
+        Game.spawns[name.SPAWN1].room.visual.text(
             '🛠️' + spawningCreep.memory.role,
-            Game.spawns[SPAWN1].pos.x + 1,
-            Game.spawns[SPAWN1].pos.y,
+            Game.spawns[name.SPAWN1].pos.x + 1,
+            Game.spawns[name.SPAWN1].pos.y,
             {align: 'left', opacity: 0.8});
     }
 

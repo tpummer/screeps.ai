@@ -1,4 +1,4 @@
-import {SPAWN1} from '../../constants';
+var name = require('constants_names');
 
 // role.harvester
 
@@ -26,7 +26,7 @@ var roleHarvester = {
                     creep.moveTo(targets[0], {visualizePathStyle: {stroke: '#ffffff'}});
                 }
             } else {
-                creep.moveTo(Game.spawns[SPAWN1]);
+                creep.moveTo(Game.spawns[name.SPAWN1]);
             }
         }
 	}
