@@ -20,7 +20,7 @@
   "dependencies": {
     "grunt-screeps": "^1.4.0",
     "lint": "^0.7.0",
-    "mocha": "^8.0.1",
+    "mocha": "^8.4.0",
     "screeps-server-mockup": "^1.5.1"
   },
   "devDependencies": {
